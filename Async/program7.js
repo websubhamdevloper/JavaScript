@@ -14,3 +14,14 @@ function fetchPosts() {
     });
 }
 
+function fetchComments() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Comments data");
+        }, 2000);
+    });
+}
+
+Promise.all([fetchUser(), fetchPosts(), fetchComments()]).then((results) => {
+    console.log("All data fetched: ", results);
+});
