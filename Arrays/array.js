@@ -73,3 +73,37 @@ const groupByGrade = students.reduce((acc, student) => {
 }, {});
 
 console.log(groupByGrade);
+
+
+// Given an array of numbers, find the longest consecutive sequence of increasing numbers.
+
+const sequence = [1, 2, 3, 7, 8, 9, 10, 15, 16, 17 , 18, 19];
+
+function longestIncreasingSequence(seq) {
+  let maxLength = 1;
+  let maxStart = 0;
+  let currentLength = 1;
+  let currentStart = 0;
+
+  for (let i = 1; i < seq.length; i++){
+    if (seq[i] === seq[i -1] + 1){
+      currentLength++;
+    } else {
+      if (currentLength > maxLength) {
+        maxLength = currentLength;
+        maxStart = currentStart;
+      }
+      currentLength = 1;
+      currentStart = i;
+    }
+  }
+
+  if(currentLength > maxLength){
+    maxLength = currentLength;
+    maxStart = currentStart;
+  }
+
+  return seq.slice(maxStart, maxStart + maxLength);
+}
+
+console.log(longestIncreasingSequence(sequence));
