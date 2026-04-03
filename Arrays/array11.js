@@ -7,3 +7,12 @@ const [fnum, Snum, ...restNum] = number;
 console.log(fnum);
 console.log(Snum);
 console.log(restNum);
+
+function seperator() {
+  return ["alpha", "beta", "gamma", "delta"];
+}
+
+const [val1, val2, ...restVal] = seperator();
+console.log(val1);
+console.log(val2);
+console.log(restVal);
