@@ -16,3 +16,7 @@ const [val1, val2, ...restVal] = seperator();
 console.log(val1);
 console.log(val2);
 console.log(restVal);
+
+(() => {
+  console.log("hello");
+})();
